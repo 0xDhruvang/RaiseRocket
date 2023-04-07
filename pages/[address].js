@@ -77,12 +77,12 @@ export default function Detail({Data, DonationsData}) {
 
   return (
     <>
-    <div className="flex flex-col items-center bg-primary-black pb-6">
-    <DetailWrapper className="flex justify-betweeen w-[1140px] h-[549px]">
-      <LeftContainer className="mt-[4%]">
+    <div className="flex flex-col items-center bg-primary-black pb-6 h-auto">
+    <DetailWrapper className="flex justify-betweeen w-[1140px] h-auto pb-4">
+      <LeftContainer className="mt-[4%] ml-[2%]">
         <ImageSection>
           <Image
-          className="border-1 border-green rounded"
+          className="border-1 border-green rounded "
             alt="raiserocket dapp"
             layout="fill"
             src={
@@ -106,11 +106,11 @@ export default function Detail({Data, DonationsData}) {
         <FundsData className="flex justify-between mt-[8%] ">
           <Funds className="align-center">
             <FundText className="font-kinetica text-[20px] text-secondary-white">Required Amount</FundText>
-            <FundText className="translate-x-[30%] font-kross text-[18px]  ">{Data.requiredAmount} Matic</FundText>
+            <FundText className="translate-x-[30%] text-secondary-white font-kross text-[18px]  ">{Data.requiredAmount} Matic</FundText>
           </Funds>
           <Funds className="align-center ">
             <FundText className="font-kinetica text-[20px] text-secondary-white ">Received Amount</FundText>
-            <FundText className="translate-x-[30%] font-kross text-[18px]  " >{Data.receivedAmount} Matic</FundText>
+            <FundText className="translate-x-[30%] text-secondary-white font-kross text-[18px]  " >{Data.receivedAmount} Matic</FundText>
           </Funds>
         </FundsData>
         <Donated className="h-[280px] mt-[15px]  border-dashed border-2  border-#D9D9D9 rounded">

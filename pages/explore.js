@@ -35,7 +35,7 @@ export default function Index({AllData, HealthData, EducationData, SocialData, S
       <hr className='border-green border-2 w-[1081px] rounded mt-[2%] mb-[2%]'></hr>
 
       {/* Cards Container */}
-      <CardsWrapper className='flex flex-wrap justify-between gap-x-4 gap-y-4'>
+      <CardsWrapper className='flex flex-wrap m-2 justify-between gap-x-4 gap-y-4'>
 
       {/* Card */}
       {filter.map((e) => {

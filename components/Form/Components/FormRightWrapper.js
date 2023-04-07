@@ -57,7 +57,7 @@ const FormRightWrapper = () => {
 
   return (
     <FormRight>
-      <FormInput  className='flex flex-col mt-5 border-dashed'>
+      <FormInput  className='flex flex-col mt-5 border-dashed text-secondary-white'>
         <FormRow>
           <RowFirstInput>
             <label className='font-kinetica text-[16px] text-secondary-white'>Required Amount</label>
@@ -78,7 +78,7 @@ const FormRightWrapper = () => {
         </FormRow>
       </FormInput>
       {/* Image */}
-      <FormInput className='mt-3'>
+      <FormInput className='mt-3 text-secondary-white'>
         <label className='font-kinetica text-[16px] text-secondary-white'>Select Image</label>
         <Image className='mt-3 p-[15px] font-kross border-dashed border-2  border-#D9D9D9 rounded' alt="dapp" onChange={Handler.ImageHandler} type={'file'} accept='image/*'>
         </Image>
