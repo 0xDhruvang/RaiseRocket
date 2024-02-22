@@ -1,7 +1,6 @@
 {
   "name": "raiserocket",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -38,5 +37,20 @@
     "hardhat": "^2.13.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
-  }
+  },
+  "description": "https://docs.google.com/presentation/d/10rEHd1qQlRZSKmFSHUxEtLvOyvmJMwxf/edit?usp=share_link&ouid=106253845854070702655&rtpof=true&sd=truehttps://docs.google.com/presentation/d/10rEHd1qQlRZSKmFSHUxEtLvOyvmJMwxf/edit?usp=share_link&ouid=106253845854070702655&rtpof=true&sd=true",
+  "main": "hardhat.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xDhruvang/RaiseRocket.git"
+  },
+  "keywords": [
+    "Crowdfunding"
+  ],
+  "author": "0xDhruvang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xDhruvang/RaiseRocket/issues"
+  },
+  "homepage": "https://github.com/0xDhruvang/RaiseRocket#readme"
 }
