@@ -1,6 +1,7 @@
 'use client'
 import { Footer } from '../components';
 import Form from '../components/Form/Form';
+import { WalletButton } from 'web3easekit';
 
 const createcampaign = () => {
   return (
