@@ -1,13 +1,3 @@
-## PPT
-
-https://docs.google.com/presentation/d/10rEHd1qQlRZSKmFSHUxEtLvOyvmJMwxf/edit?usp=share_link&ouid=106253845854070702655&rtpof=true&sd=truehttps://docs.google.com/presentation/d/10rEHd1qQlRZSKmFSHUxEtLvOyvmJMwxf/edit?usp=share_link&ouid=106253845854070702655&rtpof=true&sd=true
-
-
-## Video Demo :
-https://drive.google.com/file/d/1eYCpbN2JpusgaVNpgEyHe1PAlsVgybhr/view?usp=share_link
-
-
-
 Raise Rocket provides a decentralized platform for individuals and organizations to raise funds for their social causes and startup ideas (Crowdfunding website based on polygon chain).
 
 our blockchain crowdfunding app solves several problems that exist in traditional crowdfunding platforms. Here are some ways in which our app can solve these problems:
@@ -30,3 +20,5 @@ Overall, our blockchain crowdfunding app solves several problems that exist in t
 5) Hardhat
 6) Tailwind
 7) Vercel
+
+Git URL : https://github.com/0xDhruvang/RaiseRocket
