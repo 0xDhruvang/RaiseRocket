@@ -174,29 +174,38 @@ export async function getStaticPaths() {
   }
 }
 
+
 export async function getStaticProps(context) {
-  const provider = new ethers.providers.JsonRpcProvider(
-    process.env.NEXT_PUBLIC_RPC_URL
-  );
+  try {
+    const provider = new ethers.providers.JsonRpcProvider(
+      process.env.NEXT_PUBLIC_RPC_URL
+    );
 
-  const contract = new ethers.Contract(
-    context.params.address,
-    Campaign.abi,
-    provider
-  );
+    const contract = new ethers.Contract(
+      context.params.address,
+      Campaign.abi,
+      provider
+    );
 
-  const title = await contract.title();
-  const requiredAmount = await contract.requiredAmount();
-  const image = await contract.image();
-  const storyUrl = await contract.story();
-  const owner = await contract.owner();
-  const receivedAmount = await contract.receivedAmount();
+    // Add try-catch to handle cases where contract calls might fail
+    let title, requiredAmount, image, storyUrl, owner, receivedAmount;
 
-  const Donations = contract.filters.donated();
-  const AllDonations = await contract.queryFilter(Donations);
+    try {
+      title = await contract.title();
+      requiredAmount = await contract.requiredAmount();
+      image = await contract.image();
+      storyUrl = await contract.story();
+      owner = await contract.owner();
+      receivedAmount = await contract.receivedAmount();
+    } catch (error) {
+      console.error('Error fetching contract data:', error);
+      return { notFound: true }; // Return a 404 page if data fetch fails
+    }
 
+    const Donations = contract.filters.donated();
+    const AllDonations = await contract.queryFilter(Donations);
 
-  const Data = {
+    const Data = {
       address: context.params.address,
       title, 
       requiredAmount: ethers.utils.formatEther(requiredAmount), 
@@ -204,25 +213,31 @@ export async function getStaticProps(context) {
       receivedAmount: ethers.utils.formatEther(receivedAmount), 
       storyUrl, 
       owner,
-  }
+    };
 
-  const DonationsData =  AllDonations.map((e) => {
+    const DonationsData = AllDonations.map((e) => {
+      return {
+        donar: e.args.donar,
+        amount: ethers.utils.formatEther(e.args.amount),
+        timestamp: parseInt(e.args.timestamp),
+      };
+    });
+
     return {
-      donar: e.args.donar,
-      amount: ethers.utils.formatEther(e.args.amount),
-      timestamp : parseInt(e.args.timestamp)
-  }});
+      props: {
+        Data,
+        DonationsData
+      },
+      revalidate: 10,
+    };
 
-  return {
-    props: {
-      Data,
-      DonationsData
-    },
-    revalidate: 10
+  } catch (error) {
+    console.error("Error in getStaticProps:", error);
+    return { notFound: true };
   }
-
-
 }
+
+
 
 
 

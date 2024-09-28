@@ -2,8 +2,12 @@ const hre = require('hardhat');
 
 async function main() {
 
-    const CampaignFactory = await hre.ethers.getContractFactory("CampaignFactory")
-    const campaignFactory = await CampaignFactory.deploy();
+    const CampaignFactory = await hre.ethers.getContractFactory("CampaignFactory");
+    
+    // Define a higher gas price
+    const gasPrice = hre.ethers.utils.parseUnits('30', 'gwei'); // Set gas price to 30 Gwei
+
+    const campaignFactory = await CampaignFactory.deploy({ gasPrice });
 
     await campaignFactory.deployed();
 
