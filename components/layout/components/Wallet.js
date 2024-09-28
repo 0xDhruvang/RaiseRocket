@@ -12,7 +12,7 @@ const networks = {
       symbol: "MATIC",
       decimals: 18,
     },
-    rpcUrls: ["wss://polygon-amoy-bor-rpc.publicnode.com/"],
+    rpcUrls: ["https://rpc-amoy.polygon.technology/"],
     blockExplorerUrls: ["https://amoy.polygonscan.com/"],
   },
 };
